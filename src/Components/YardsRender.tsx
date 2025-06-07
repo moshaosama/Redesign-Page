@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { useSelectData } from "../Hooks/useSelectData";
 import { FaCheckCircle, FaRegCircle } from "react-icons/fa";
 import { useGetTheme } from "../Context/ToggleLightContext";
+import { PuffLoader } from "react-spinners";
 
 const YardsRender = () => {
   const { Yards, DelayData } = useGetData();
@@ -90,9 +91,7 @@ const YardsRender = () => {
             </div>
           ))
         ) : (
-          <p className="text-red-500">
-            No yards data available or data is not an array.
-          </p>
+          <PuffLoader />
         )}
       </div>
     </>
