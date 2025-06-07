@@ -44,18 +44,6 @@ to the final current design, with improved UI, UX, and performance.
 
 ---
 
-## 🖼️ Screenshots
-
-### Yard Grid View  
-![Yard Grid](https://your-supabase-storage-link.com/yard-grid.jpg)
-
-### Card Selection  
-![Card Selection](https://your-supabase-storage-link.com/card-selection.jpg)
-
-> 💡 Replace the above image URLs with your actual project images.
-
----
-
 ## 💻 Installation
 
 ```bash
