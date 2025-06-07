@@ -9,16 +9,23 @@ const useGetData = () => {
     (state: RootState) => state.Yards
   ) as GetDataYardsSlice;
   const [DelayData, setDalayData] = useState(false);
+  const [Time, setTime] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
-    dispatch(fetchGetYards());
+    const fetchData = async () => {
+      setTime(true);
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      setTime(false);
+      dispatch(fetchGetYards());
+    };
+    fetchData();
   }, [dispatch]);
 
   useEffect(() => {
     setDalayData(true);
   }, [DelayData]);
 
-  return { Yards, DelayData };
+  return { Yards, DelayData, Time };
 };
 
 export default useGetData;
