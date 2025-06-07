@@ -5,7 +5,7 @@ import YardsRender from "../../Components/YardsRender";
 const SelectYards = () => {
   return (
     <>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center ">
         <Header />
         <SectionText />
         <YardsRender />
