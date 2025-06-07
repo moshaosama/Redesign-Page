@@ -8,12 +8,15 @@ import {
 
 interface ThemeContextData {
   theme: string;
+  ToggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextData | null>(null);
 
 const ToggleLightProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState(
+    window.localStorage.getItem("theme") || "dark"
+  );
 
   useEffect(() => {
     const getTheme = window.localStorage.getItem("theme");
@@ -27,8 +30,18 @@ const ToggleLightProvider = ({ children }: { children: ReactNode }) => {
     window.localStorage.setItem("theme", theme);
   }, [theme]);
 
+  const ToggleTheme = () => {
+    setTheme((prevTheme) => {
+      const newTheme = prevTheme === "dark" ? "light" : "dark";
+      window.localStorage.setItem("theme", newTheme);
+      return newTheme;
+    });
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme }}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme, ToggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
   );
 };
 
