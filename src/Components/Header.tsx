@@ -9,7 +9,7 @@ import { MdDarkMode } from "react-icons/md";
 const Header = () => {
   const { ToggleTheme, theme } = useGetTheme();
   return (
-    <div className="flex gap-4 mt-10  max-sm:hidden max-lg:hidden max-xl:hidden">
+    <div className="flex gap-4 mt-10  max-sm:overflow-x-scroll max-sm:w-full max-lg:w-full  max-xl:w-full  max-lg:overflow-x-scroll max-xl:overflow-x-scroll">
       {HeaderData.map((el: HeaderType) => {
         return (
           <div
