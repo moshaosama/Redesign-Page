@@ -2,13 +2,20 @@ import useGetData from "../Hooks/useGetData";
 import clsx from "clsx";
 import { useSelectData } from "../Hooks/useSelectData";
 import { FaCheckCircle, FaRegCircle } from "react-icons/fa";
+import { useGetTheme } from "../Context/ToggleLightContext";
 
 const YardsRender = () => {
   const { Yards } = useGetData();
+  const { theme } = useGetTheme();
   const { OnSubmit, selectedIndex } = useSelectData();
   return (
     <>
-      <div className="mt-10 flex flex-col gap-10 text-white">
+      <div
+        className={clsx(
+          "mt-10 flex flex-col gap-10",
+          theme === "dark" ? "text-white" : "text-black"
+        )}
+      >
         {Array.isArray(Yards?.yards) ? (
           Yards?.yards?.map((yard) => (
             <div
@@ -36,7 +43,14 @@ const YardsRender = () => {
                 </div>
               </div>
               <div className="mr-10">
-                <button className="bg-white text-xl flex items-center justify-center gap-2 w-32 py-2 rounded-xl text-black font-bold cursor-pointer">
+                <button
+                  className={clsx(
+                    " text-xl flex items-center justify-center gap-2 w-32 py-2 rounded-xl  font-bold cursor-pointer",
+                    theme === "dark"
+                      ? "bg-white text-black"
+                      : "bg-black text-white"
+                  )}
+                >
                   {selectedIndex === yard.id ? (
                     <FaCheckCircle size={15} className="mt-1 text-green-600" />
                   ) : (
