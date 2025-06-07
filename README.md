@@ -23,6 +23,6 @@ An interactive web app that allows users to view and select skip hire yard sizes
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/skip-hire-app.git
-cd skip-hire-app
+git clone https://github.com/moshaosama/Redesign-Page.git
+cd redesign_page
 npm install
