@@ -2,7 +2,7 @@
 
 An interactive web app that allows users to view and select skip hire yard sizes, built using React, TypeScript, Tailwind CSS, and Supabase.
 
-![Preview](./preview.png)
+
 
 ## 🚀 Features
 
